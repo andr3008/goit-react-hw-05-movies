@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import * as moviesAPI from "../../services/movies-api";
-import { AddTitle, ReviewList, ReviewItem } from "./Review.styled";
+import { AddTitle, ReviewList, ReviewItem, AuthorName } from "./Review.styled";
 
 export default function Reviews() {
 	let { filmId } = useParams();
 	const [reviews, setReviews] = useState([]);
 	useEffect(() => {
-		moviesAPI.FetchFilmsReviews(filmId).then((r) => {
+		moviesAPI.fetchFilmsReviews(filmId).then((r) => {
 			setReviews(r.results);
 		});
 	}, [filmId]);
@@ -18,7 +18,7 @@ export default function Reviews() {
 				{reviews.length !== 0 ? (
 					reviews.map(({ id, author, content }) => (
 						<ReviewItem key={id}>
-							<p>Author: {author}</p>
+							<AuthorName>Author: {author}</AuthorName>
 							<p>{content}</p>
 						</ReviewItem>
 					))

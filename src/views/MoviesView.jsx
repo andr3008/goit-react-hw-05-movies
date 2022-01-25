@@ -1,10 +1,11 @@
+
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import * as moviesAPI from "../services/movies-api";
 import SearchBar from "../components/SearchBar/SearchBar";
 import MoviesList from "../components/MoviesList/MoviesList";
 
-export default function MoviesView({ keyword }) {
+export default function MoviesView() {
 	const [query, setQuery] = useState("");
 	const [searched, setSearched] = useState([]);
 	const location = useLocation();
@@ -17,7 +18,7 @@ export default function MoviesView({ keyword }) {
 			return;
 		}
 		moviesAPI
-			.FetchSearchingFilms(query)
+			.fetchSearchingFilms(query)
 			.then((r) => r.results)
 			.then(setSearched);
 	}, [query]);
@@ -27,7 +28,7 @@ export default function MoviesView({ keyword }) {
 			return;
 		}
 		moviesAPI
-			.FetchSearchingFilms(search)
+			.fetchSearchingFilms(search)
 			.then((r) => r.results)
 			.then(setSearched);
 	}, [search]);

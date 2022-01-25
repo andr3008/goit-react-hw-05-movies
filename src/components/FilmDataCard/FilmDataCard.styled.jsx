@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-
 import { Link } from "react-router-dom";
+
 export const FilmCard = styled.div`
 	display: flex;
 	margin-bottom: 20px;
@@ -22,6 +22,17 @@ export const FilmTitle = styled.h2`
 export const Datas = styled.p`
 	margin-bottom: 20px;
 `;
+export const DataGenre = styled.ul`
+	display: flex;
+	align-items: center;
+	li:not(:last-child)::after {
+		content: ",";
+		margin-right: 5px;
+	}
+`;
+export const Data = styled.li`
+	list-style: none;
+`;
 export const DatasTitle = styled.h3`
 	margin-bottom: 20px;
 	font-size: 25px;
@@ -35,6 +46,7 @@ export const AddList = styled.ul`
 	list-style-position: inside;
 `;
 export const AddItem = styled.li`
+	list-style: none;
 	margin-bottom: 12px;
 	font-size: 18px;
 `;

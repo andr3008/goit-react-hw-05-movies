@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
 import { TrendMoviesList, MovieItem, LinkStyle } from "./MovieList.styled";
 
@@ -15,3 +16,10 @@ export default function MoviesList({ movies }) {
 		</TrendMoviesList>
 	);
 }
+MoviesList.propTypes = {
+	movies: PropTypes.arrayOf(
+		PropTypes.shape({
+			id: PropTypes.number.isRequired,
+		})
+	),
+};

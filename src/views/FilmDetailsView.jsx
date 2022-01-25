@@ -12,7 +12,7 @@ export default function FilmDetailsView() {
 	const [film, setFilm] = useState(null);
 
 	useEffect(() => {
-		moviesAPI.FetchFilmsDetails(filmId).then((r) => setFilm(r));
+		moviesAPI.fetchFilmsDetails(filmId).then((r) => setFilm(r));
 	}, [filmId]);
 
 	return (

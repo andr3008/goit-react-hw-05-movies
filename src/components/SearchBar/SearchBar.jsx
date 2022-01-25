@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 import {
 	SearchForm,
@@ -6,6 +7,7 @@ import {
 	SearchFormInput,
 } from "./SearchBar.styled";
 import { BiSearch } from "react-icons/bi";
+
 export default function Searchbar({ onSubmit }) {
 	const [keyWord, setKeyWord] = useState("");
 
@@ -39,3 +41,6 @@ export default function Searchbar({ onSubmit }) {
 		</>
 	);
 }
+Searchbar.propTypes = {
+	onSubmit: PropTypes.func.isRequired,
+};

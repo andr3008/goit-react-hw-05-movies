@@ -1,3 +1,8 @@
+import PropTypes from "prop-types";
+
 export default function NotFoundView() {
-	return <h1>Page not found</h1>;
+	return <h2>Page not found</h2>;
 }
+NotFoundView.propTypes = {
+	textError: PropTypes.string.isRequired,
+};

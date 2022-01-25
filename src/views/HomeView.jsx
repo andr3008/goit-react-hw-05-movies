@@ -8,7 +8,7 @@ export default function HomeView() {
 
 	useEffect(() => {
 		moviesAPI
-			.FetchTrendingFilms()
+			.fetchTrendingFilms()
 			.then((r) => r.results)
 			.then(setFilms);
 	}, []);

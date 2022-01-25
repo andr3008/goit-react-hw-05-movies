@@ -1,9 +1,12 @@
+import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
 import {
 	FilmCard,
 	Poster,
 	DetailsCard,
 	FilmTitle,
+	DataGenre,
+	Data,
 	Datas,
 	DatasTitle,
 	AddTitle,
@@ -18,7 +21,7 @@ export default function FilmDataCard({ film }) {
 		<>
 			<FilmCard>
 				<Poster
-					src={`https://image.tmdb.org/t/p/w300${film.poster_path}`}
+					src={`https://image.tmdb.org/t/p/w200${film.poster_path}`}
 					alt="poster"
 				/>
 				<DetailsCard>
@@ -29,6 +32,11 @@ export default function FilmDataCard({ film }) {
 					<DatasTitle>Overview</DatasTitle>
 					<Datas>{film.overview}</Datas>
 					<DatasTitle>Genres</DatasTitle>
+					<DataGenre>
+						{film.genres.map((genre) => (
+							<Data key={genre.id}>{genre.name}</Data>
+						))}
+					</DataGenre>
 				</DetailsCard>
 			</FilmCard>
 			<AddTitle>Additional information</AddTitle>
@@ -47,3 +55,10 @@ export default function FilmDataCard({ film }) {
 		</>
 	);
 }
+FilmDataCard.propTypes = {
+	film: PropTypes.arrayOf(
+		PropTypes.shape({
+			id: PropTypes.number.isRequired,
+		})
+	),
+};

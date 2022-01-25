@@ -8,28 +8,28 @@ async function fetchWithErrorHandling(url = "", config = {}) {
     : Promise.reject(new Error("Not found"));
 }
 
-export function FetchTrendingFilms() {
+export function fetchTrendingFilms() {
   return fetchWithErrorHandling(
     `${BASE_URL}/trending/movie/day?api_key=${API_KEY}`
   );
 }
 
-export function FetchFilmsDetails(movieId) {
+export function fetchFilmsDetails(movieId) {
   return fetchWithErrorHandling(
     `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}`
   );
 }
-export function FetchFilmsCredits(movieId) {
+export function fetchFilmsCredits(movieId) {
   return fetchWithErrorHandling(
     `${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}`
   );
 }
-export function FetchFilmsReviews(movieId) {
+export function fetchFilmsReviews(movieId) {
   return fetchWithErrorHandling(
     `${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`
   );
 }
-export function FetchSearchingFilms(query) {
+export function fetchSearchingFilms(query) {
   return fetchWithErrorHandling(
     `${BASE_URL}/search/movie?query=${query}&api_key=${API_KEY}&include_adult=false`
   );

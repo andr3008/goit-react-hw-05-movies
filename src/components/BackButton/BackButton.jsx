@@ -8,7 +8,7 @@ export default function BackButton({ location }) {
 	};
 	return (
 		<Button type="button" onClick={onGoBack}>
-			<Label>Back</Label>
+			<Label>Go Back</Label>
 		</Button>
 	);
 }
