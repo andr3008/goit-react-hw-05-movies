@@ -1,21 +1,36 @@
 import { NavLink, Outlet } from "react-router-dom";
-import styles from "./Navigation.module.css";
+import { Nav, NavList, NavListItem } from "./Navigation.styled";
 
-const Navigation = () => {
+export default function Navigation() {
 	return (
-		<div>
-			<nav>
-				<NavLink to="home" className={styles.link}>
-					Home
-				</NavLink>
-
-				<NavLink to="movies" className={styles.link}>
-					Movies
-				</NavLink>
-			</nav>
+		<>
+			<Nav>
+				<NavList>
+					<NavListItem>
+						<NavLink
+							to="/"
+							style={({ isActive }) => ({
+								color: isActive ? "#dc0088" : "#2a363b",
+								textDecoration: isActive ? "underline" : "none",
+							})}
+						>
+							Home
+						</NavLink>
+					</NavListItem>
+					<NavListItem>
+						<NavLink
+							to="/movies"
+							style={({ isActive }) => ({
+								color: isActive ? "#dc0088" : "#2a363b",
+								textDecoration: isActive ? "underline" : "none",
+							})}
+						>
+							Movies
+						</NavLink>
+					</NavListItem>
+				</NavList>
+			</Nav>
 			<Outlet />
-		</div>
+		</>
 	);
-};
-
-export default Navigation;
+}
