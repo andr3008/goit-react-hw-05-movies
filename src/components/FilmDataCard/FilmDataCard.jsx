@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
 import {
 	FilmCard,
@@ -55,10 +54,3 @@ export default function FilmDataCard({ film }) {
 		</>
 	);
 }
-FilmDataCard.propTypes = {
-	film: PropTypes.arrayOf(
-		PropTypes.shape({
-			id: PropTypes.number.isRequired,
-		})
-	),
-};

@@ -10,7 +10,7 @@ export const ReviewItem = styled.li`
 	list-style-position: inside;
 	list-style: none;
 `;
-export const AuthorName = styled.li`
+export const AuthorName = styled.p`
 	margin-bottom: 20px;
 	font-size: 22px;
 `;
